@@ -21,9 +21,11 @@ import io
 import re
 from typing import List, Tuple, Generator, Optional
 
+from construct.core import StreamError
 from osmocom.tlv import camel_to_snake
 from osmocom.utils import hexstr
 from pySim.utils import enc_iccid, dec_iccid, enc_imsi, dec_imsi, h2b, b2h, rpad, sanitize_iccid
+from pySim.ts_31_102 import EF_AD
 from pySim.ts_51_011 import EF_SMSP
 from pySim.esim.saip import param_source
 from pySim.esim.saip import ProfileElement, ProfileElementSD, ProfileElementSequence
@@ -658,6 +660,72 @@ class SmspTpScAddr(ConfigurableParameter):
             international = (international == 'international')
 
             yield { cls.name: cls.tuple_to_str((international, digits)) }
+
+
+class MncLen(EnumParam):
+    """MNC length.  Sets only the MNC length field in EF.AD (Administrative Data).
+    Accepted values: integer 2 or 3, digit strings '2' or '3', or enum names 'MNC2'/'MNC3'.
+    """
+    name = 'MNC-LEN'
+    example_input = '2'
+    default_source = param_source.ConstantSource
+
+    class Values(enum.IntEnum):
+        MNC2 = 2
+        MNC3 = 3
+
+    @classmethod
+    def validate_val(cls, val):
+        if isinstance(val, str) and val.isdigit():
+            val = int(val)
+        return super().validate_val(val)
+
+    @classmethod
+    def _get_f_ad(cls, pe: ProfileElement):
+        if not hasattr(pe, 'files'):
+            return None
+        f_ad = pe.files.get('ef-ad', None)
+        if f_ad and f_ad.body:
+            return f_ad
+        return None
+
+    @classmethod
+    def _decode_f_ad(cls, f_ad):
+        try:
+            ef_ad_dec = EF_AD().decode_bin(f_ad.body)
+        except StreamError:
+            return None
+        if 'mnc_len' not in ef_ad_dec:
+            return None
+        return ef_ad_dec
+
+    @classmethod
+    def apply_val(cls, pes: ProfileElementSequence, val: int):
+        for pe in pes.get_pes_for_type('usim'):
+            f_ad = cls._get_f_ad(pe)
+            if f_ad is None:
+                continue
+            # decode existing values
+            ef_ad_dec = cls._decode_f_ad(f_ad)
+            if ef_ad_dec is None:
+                continue
+            # change mnc_len
+            ef_ad_dec['mnc_len'] = val
+            # re-encode into the File body
+            f_ad.body = EF_AD().encode_bin(ef_ad_dec)
+            pe.file2pe(f_ad)
+
+    @classmethod
+    def get_values_from_pes(cls, pes: ProfileElementSequence):
+        for pe in pes.get_pes_for_type('usim'):
+            f_ad = cls._get_f_ad(pe)
+            if f_ad is None:
+                continue
+            ef_ad_dec = cls._decode_f_ad(f_ad)
+            if ef_ad_dec is None:
+                continue
+            mnc_len = ef_ad_dec.get('mnc_len')
+            yield { cls.name: str(mnc_len) }
 
 
 class SdKey(BinaryParam):

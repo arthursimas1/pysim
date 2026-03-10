@@ -163,6 +163,14 @@ ok: TS48v5_SAIP2.1A_NoBERTLV.der MilenageXoringConstants(val=	b'\xaa\xaa\xaa\xaa
 	clean_val=	b'\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11""""""""""""""""':bytes
 	read_back_val=	{'MilenageXOR': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccccccccc1111111111111111111111111111111122222222222222222222222222222222'}:{hexstr}
 
+ok: TS48v5_SAIP2.1A_NoBERTLV.der MncLen(val=	'2':str)
+	clean_val=	2:int
+	read_back_val=	{'MNC-LEN': '2'}:{str}
+
+ok: TS48v5_SAIP2.1A_NoBERTLV.der MncLen(val=	3:int)
+	clean_val=	3:int
+	read_back_val=	{'MNC-LEN': '3'}:{str}
+
 ok: TS48v5_SAIP2.1A_NoBERTLV.der SdKeyScp02Kvn20AesDek(val=	'01020304050607080910111213141516':str)
 	clean_val=	b'\x01\x02\x03\x04\x05\x06\x07\x08\t\x10\x11\x12\x13\x14\x15\x16':bytes
 	read_back_val=	{'SCP02-KVN20-AES-DEK': '01020304050607080910111213141516'}:{hexstr}
@@ -854,6 +862,14 @@ ok: TS48v5_SAIP2.3_BERTLV_SUCI.der MilenageXoringConstants(val=	'aaaaaaaaaaaaaaa
 ok: TS48v5_SAIP2.3_BERTLV_SUCI.der MilenageXoringConstants(val=	b'\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11""""""""""""""""':bytes)
 	clean_val=	b'\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11""""""""""""""""':bytes
 	read_back_val=	{'MilenageXOR': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccccccccc1111111111111111111111111111111122222222222222222222222222222222'}:{hexstr}
+
+ok: TS48v5_SAIP2.3_BERTLV_SUCI.der MncLen(val=	'2':str)
+	clean_val=	2:int
+	read_back_val=	{'MNC-LEN': '2'}:{str}
+
+ok: TS48v5_SAIP2.3_BERTLV_SUCI.der MncLen(val=	3:int)
+	clean_val=	3:int
+	read_back_val=	{'MNC-LEN': '3'}:{str}
 
 ok: TS48v5_SAIP2.3_BERTLV_SUCI.der SdKeyScp02Kvn20AesDek(val=	'01020304050607080910111213141516':str)
 	clean_val=	b'\x01\x02\x03\x04\x05\x06\x07\x08\t\x10\x11\x12\x13\x14\x15\x16':bytes
@@ -1547,6 +1563,14 @@ ok: TS48v5_SAIP2.1B_NoBERTLV.der MilenageXoringConstants(val=	b'\xaa\xaa\xaa\xaa
 	clean_val=	b'\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11""""""""""""""""':bytes
 	read_back_val=	{'MilenageXOR': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccccccccc1111111111111111111111111111111122222222222222222222222222222222'}:{hexstr}
 
+ok: TS48v5_SAIP2.1B_NoBERTLV.der MncLen(val=	'2':str)
+	clean_val=	2:int
+	read_back_val=	{'MNC-LEN': '2'}:{str}
+
+ok: TS48v5_SAIP2.1B_NoBERTLV.der MncLen(val=	3:int)
+	clean_val=	3:int
+	read_back_val=	{'MNC-LEN': '3'}:{str}
+
 ok: TS48v5_SAIP2.1B_NoBERTLV.der SdKeyScp02Kvn20AesDek(val=	'01020304050607080910111213141516':str)
 	clean_val=	b'\x01\x02\x03\x04\x05\x06\x07\x08\t\x10\x11\x12\x13\x14\x15\x16':bytes
 	read_back_val=	{'SCP02-KVN20-AES-DEK': '01020304050607080910111213141516'}:{hexstr}
@@ -2238,6 +2262,14 @@ ok: TS48v5_SAIP2.3_NoBERTLV.der MilenageXoringConstants(val=	'aaaaaaaaaaaaaaaaaa
 ok: TS48v5_SAIP2.3_NoBERTLV.der MilenageXoringConstants(val=	b'\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11""""""""""""""""':bytes)
 	clean_val=	b'\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xaa\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xbb\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\xcc\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11\x11""""""""""""""""':bytes
 	read_back_val=	{'MilenageXOR': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccccccccc1111111111111111111111111111111122222222222222222222222222222222'}:{hexstr}
+
+ok: TS48v5_SAIP2.3_NoBERTLV.der MncLen(val=	'2':str)
+	clean_val=	2:int
+	read_back_val=	{'MNC-LEN': '2'}:{str}
+
+ok: TS48v5_SAIP2.3_NoBERTLV.der MncLen(val=	3:int)
+	clean_val=	3:int
+	read_back_val=	{'MNC-LEN': '3'}:{str}
 
 ok: TS48v5_SAIP2.3_NoBERTLV.der SdKeyScp02Kvn20AesDek(val=	'01020304050607080910111213141516':str)
 	clean_val=	b'\x01\x02\x03\x04\x05\x06\x07\x08\t\x10\x11\x12\x13\x14\x15\x16':bytes
