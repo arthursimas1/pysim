@@ -32,7 +32,7 @@ if version.parse(cmd2.__version__) >= version.parse("3.0.0"):
     def _style(text, fg=None): # pylint: disable=function-redefined
         return _stylize(text, fg) if fg else text
 else: # cmd2>=2.6.2
-    from cmd2 import style as _style # type: ignore[no-redef]
+    from cmd2 import style as _style # pylint: disable=no-name-in-module
 
 class _PySimLogHandler(logging.Handler):
     def __init__(self, log_callback):
