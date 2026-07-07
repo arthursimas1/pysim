@@ -34,6 +34,7 @@ log = PySimLogger.get(__name__)
 # CardModel is created, which will add the ATR-based matching and
 # calling of SysmocomSJA2.add_files.  See  CardModel.apply_matching_models
 import pySim.sysmocom_sja2
+import pySim.smartjac
 import pySim.oyeitimes
 
 # we need to import these modules so that the various sub-classes of
